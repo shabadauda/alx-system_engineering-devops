@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ -z "$TRUEKNOWLEDGE" ]; then
+  echo "ERROR: The environment variable TRUEKNOWLEDGE is not set."
+  exit 1
+fi
+result=$((128 + TRUEKNOWLEDGE))
+echo "Result of adding 128 and TRUEKNOWLEDGE: $result"

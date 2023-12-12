@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "Accessing BEST from another script: $BEST"

@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ -z "$WATER" ]; then
+  echo "ERROR: The environment variable WATER is not set."
+  exit 1
+fi
+if [ -z "$STIR" ]; then
+  echo "ERROR: The environment variable STIR is not set."
+  exit 1
+fi
+result=$(echo "ibase=water;obase=bestchol;${WATER} + ${STIR}" | bc)
+echo "Result of adding WATER and STIR in base bestchol: $result"

@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ -z "$BREATH" ]; then
+  echo "ERROR: The environment variable BREATH is not set."
+  exit 1
+fi
+if [ -z "$LOVE" ]; then
+  echo "ERROR: The environment variable LOVE is not set."
+  exit 1
+fi
+result=$(awk "BEGIN { printf \"%.2f\", $BREATH ^ $LOVE }")
+echo "Result of BREATH to the power of LOVE: $result"

@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ -z "$DECIMAL" ]; then
+  echo "ERROR: The environment variable DECIMAL is not set."
+  exit 1
+fi
+hexadecimal=$(printf "%X\n" "$DECIMAL")
+echo "Hexadecimal equivalent of decimal $DECIMAL: $hexadecimal"

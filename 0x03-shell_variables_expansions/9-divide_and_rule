@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ -z "$POWER" ]; then
+  echo "ERROR: The environment variable POWER is not set."
+  exit 1
+fi
+if [ -z "$DIVIDE" ]; then
+  echo "ERROR: The environment variable DIVIDE is not set."
+  exit 1
+fi
+result=$(awk "BEGIN { printf \"%.2f\", $POWER / $DIVIDE }")
+echo "Result of POWER divided by DIVIDE: $result"

@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ -z "$BINARY" ]; then
+  echo "ERROR: The environment variable BINARY is not set."
+  exit 1
+fi
+decimal=$(echo "ibase=2; $BINARY" | bc)
+echo "Decimal equivalent of binary $BINARY: $decimal"

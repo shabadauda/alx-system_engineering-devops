@@ -1,0 +1,14 @@
+#!/bin/bash
+echo "Local Variables:"
+echo "-----------------"
+for var in $(set | grep "^[a-zA-Z_][a-zA-Z_0-9]*=" | cut -d= -f1); do
+    echo "$var=${!var}"
+done
+echo -e "\nEnvironment Variables:"
+echo "-----------------------"
+for var in $(env | cut -d= -f1); do
+    echo "$var=${!var}"
+done
+echo -e "\nFunctions:"
+echo "----------"
+declare -F | cut -d' ' -f3-
